@@ -13,7 +13,6 @@ public class FibonacciServiceImpl implements FibonacciServiceIntf {
     }
 
     private int calculateNthFibonacci(int n) {
-        System.out.println(n);
         if(n>0){
                this.n3 = this.n1 + this.n2;
                this.n1 = this.n2;
