@@ -8,11 +8,11 @@ import javax.xml.ws.Service;
 
 import static org.testng.Assert.assertEquals;
 
+import de.hska.iwi.vislab.lab1.example.ws.FibonacciServiceIntf;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 
-import de.hska.iwi.vislab.lab1.example.ws.FibonacciService;
 import de.hska.iwi.vislab.lab1.example.ws.FibonacciServiceImpl;
 
 public class FibonacciTest {
@@ -39,6 +39,7 @@ public class FibonacciTest {
 	public void initServer() {
 		// start the server
 		ep = Endpoint.publish(FIBONACCI_URL, new FibonacciServiceImpl());
+
 	}
 
 	@Test
@@ -49,8 +50,9 @@ public class FibonacciTest {
 				"FibonacciServiceImplService"));
 
 		// create a proxy object for the fibonacci service interface
-		FibonacciService fibonacciService = service
-				.getPort(FibonacciService.class);
+		FibonacciServiceIntf fibonacciService = service
+				.getPort(FibonacciServiceIntf.class);
+
 
 		// call the service 25 times
 		int max = 25;
@@ -58,7 +60,7 @@ public class FibonacciTest {
 		for (int i = 1; i <= max; i++) {
 			if (i > 1)
 				result = fibonacciService.getFibonacci(i);
-			System.out.println(result);
+			    System.out.println(result);
 		}
 		// test the 25th f*-nr
 		assertEquals(result, 75025);
