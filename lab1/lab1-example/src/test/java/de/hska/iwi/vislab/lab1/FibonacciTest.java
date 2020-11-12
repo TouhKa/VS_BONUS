@@ -2,6 +2,7 @@ package de.hska.iwi.vislab.lab1;
 
 import java.net.URL;
 
+import javax.swing.*;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Endpoint;
 import javax.xml.ws.Service;
@@ -69,6 +70,7 @@ public class FibonacciTest {
 	@AfterTest
 	public void stopServer() {
 		// stop the server
+		//JOptionPane.showMessageDialog(null, "TestWsServer beenden");
 		ep.stop();
 	}
 }
