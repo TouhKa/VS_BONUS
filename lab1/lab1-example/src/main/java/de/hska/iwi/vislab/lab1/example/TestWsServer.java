@@ -2,8 +2,6 @@ package de.hska.iwi.vislab.lab1.example;
 
 import javax.swing.JOptionPane;
 import javax.xml.ws.Endpoint;
-
-import de.hska.iwi.vislab.lab1.example.ws.BuecherServiceImpl;
 import de.hska.iwi.vislab.lab1.example.ws.FibonacciServiceImpl;
 
 
