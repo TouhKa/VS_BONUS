@@ -63,6 +63,33 @@ public class FibonacciTest {
 		}
 		// test the 27th f*-nr
 		assertEquals(result, 75025);
+
+		// reset the sequence
+		fibonacciService.resetSequence();
+		// first number has to be 0
+		assertEquals(fibonacciService.getNextFibonacci(), 0);
+		// check the next numbers
+		assertEquals(fibonacciService.getNextFibonacci(), 1);
+		assertEquals(fibonacciService.getNextFibonacci(), 1);
+		assertEquals(fibonacciService.getNextFibonacci(), 2);
+		assertEquals(fibonacciService.getNextFibonacci(), 3);
+		assertEquals(fibonacciService.getNextFibonacci(), 5);
+		assertEquals(fibonacciService.getNextFibonacci(), 8);
+		assertEquals(fibonacciService.getNextFibonacci(), 13);
+		assertEquals(fibonacciService.getNextFibonacci(), 21);
+		assertEquals(fibonacciService.getNextFibonacci(), 34);
+		assertEquals(fibonacciService.getNextFibonacci(), 55);
+		assertEquals(fibonacciService.getNextFibonacci(), 89);
+		assertEquals(fibonacciService.getNextFibonacci(), 144);
+		// reset again
+		fibonacciService.resetSequence();
+		assertEquals(fibonacciService.getNextFibonacci(), 0);
+		assertEquals(fibonacciService.getNextFibonacci(), 1);
+		assertEquals(fibonacciService.getNextFibonacci(), 1);
+		assertEquals(fibonacciService.getNextFibonacci(), 2);
+		assertEquals(fibonacciService.getNextFibonacci(), 3);
+		assertEquals(fibonacciService.getNextFibonacci(), 5);
+		assertEquals(fibonacciService.getNextFibonacci(), 8);
 	}
 
 	@AfterTest

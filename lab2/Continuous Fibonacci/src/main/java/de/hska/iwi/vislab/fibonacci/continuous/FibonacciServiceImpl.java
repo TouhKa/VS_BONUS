@@ -15,9 +15,6 @@ public class FibonacciServiceImpl implements FibonacciServiceIntf {
         ultimateNumber = 1;
     }
 
-
-    static int n1=0,n2=1,n3=0;
-
     @Override
     public int getNextFibonacci() {
         int nextFibonacci = penultimateNumber + ultimateNumber;
@@ -25,4 +22,13 @@ public class FibonacciServiceImpl implements FibonacciServiceIntf {
         this.ultimateNumber = nextFibonacci;
         return nextFibonacci;
     }
+
+    @Override
+    public String resetSequence() {
+        penultimateNumber = -1;
+        ultimateNumber = 1;
+        return "Sequence reset successful!";
+    }
+
+    
 }

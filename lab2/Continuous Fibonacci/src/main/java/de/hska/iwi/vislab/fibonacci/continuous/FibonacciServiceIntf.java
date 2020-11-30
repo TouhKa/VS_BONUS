@@ -5,4 +5,7 @@ import javax.jws.*;
 public interface FibonacciServiceIntf {
     //returns the next fibonacci number
     int getNextFibonacci();
+
+    // resets the service to the beginning
+    String resetSequence();
 }
