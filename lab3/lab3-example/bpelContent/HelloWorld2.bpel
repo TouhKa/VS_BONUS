@@ -37,13 +37,28 @@
 				<from variable="myVar" part="TestPart" />
 				<to variable="tmpVar" />
 			</copy>
-			<copy>
-				<from>concat($tmpVar,' World')</from>
-				<to variable="myVar" part="TestPart" />
-			</copy>
 		</assign>
 
-		<reply name="end" partnerLink="helloPartnerLink" portType="test:HelloPortType"
+        
+        <if name="If"><condition>string-length($tmpVar) &gt; 10</condition>
+            <assign validate="no" name="Assign">
+            	<copy>
+					<from>concat($tmpVar,' long')</from>
+					<to variable="myVar" part="TestPart" />
+				</copy>
+            </assign>
+            <else>
+                <assign validate="no" name="Assign2">
+                	<copy>
+						<from>concat($tmpVar,' short')</from>
+						<to variable="myVar" part="TestPart" />
+					</copy>
+                </assign>
+            </else>
+        
+        </if>
+        <reply name="end" partnerLink="helloPartnerLink" portType="test:HelloPortType"
 			operation="hello" variable="myVar" />
-	</sequence>
+        
+    </sequence>
 </process>
