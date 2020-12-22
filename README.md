@@ -6,3 +6,4 @@ Collection of exercise examples and base projects
 * lab2: Code RESTful Services
 * lab3: Code a BPEL Process
 * lab4: Code RESTful Transactions
+* lab5: Code Secured REST Services

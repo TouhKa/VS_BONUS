@@ -1,8 +1,7 @@
-package de.hska.iwi.vislab.lab1.example;
+package de.hska.iwi.vislab.fibonacci.continuous;
 
 import javax.swing.JOptionPane;
 import javax.xml.ws.Endpoint;
-import de.hska.iwi.vislab.lab1.example.ws.FibonacciServiceImpl;
 
 
 /** Testserver fuer den Webservice */

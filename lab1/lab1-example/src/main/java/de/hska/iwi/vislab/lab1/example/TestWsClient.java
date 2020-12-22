@@ -16,6 +16,14 @@ import de.hska.iwi.vislab.lab1.example.ws.BuecherTO;
 
 /** Testclient fuer den Webservice */
 public class TestWsClient {
+	
+	static {
+		// dump http on client
+		System.setProperty("com.sun.xml.internal.ws.transport.http.client.HttpTransportPipe.dump", "true");
+		// dump http on server		
+		//System.setProperty("com.sun.xml.internal.ws.transport.http.HttpAdapter.dump", "true");
+	}
+	
 	public static void main(final String[] args) throws Exception {
 		String url = (args.length > 0) ? args[0]
 				: "http://localhost:4434/buecherservice";
