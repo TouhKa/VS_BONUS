@@ -26,7 +26,7 @@ Cache-Control: no-cache
 
 ###
 
-PUT http://localhost:8088/fib/0
+POST http://localhost:8088/fib/0
 Accept: text/plain
 Cache-Control: no-cache
 # makes the specified counter calculate the next value

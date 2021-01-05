@@ -57,7 +57,7 @@ public class FibonacciResourceTest {
 		assertEquals(response4, "0");
 		// increment the counter 13 times
 		for (int i = 0; i < 13; i++) {
-			String re = target.path("/fib/1").request().accept(MediaType.TEXT_PLAIN).put(null, String.class);
+			String re = target.path("/fib/1").request().accept(MediaType.TEXT_PLAIN).post(null, String.class);
 			assertEquals(re, "Success!");
 		}
 		// query again
