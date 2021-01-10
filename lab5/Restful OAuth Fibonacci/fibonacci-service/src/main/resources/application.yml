@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: fibonacci-service
+security:
+  user:
+    name: daniel
+    password: 1234
+  oauth2:
+    resource:
+      filter-order: 3
+logging:
+  level:
+    org.springframework.security: DEBUG
