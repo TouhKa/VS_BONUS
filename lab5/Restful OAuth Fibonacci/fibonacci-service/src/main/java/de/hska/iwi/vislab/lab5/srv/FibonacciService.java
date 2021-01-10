@@ -46,10 +46,10 @@ public class FibonacciService {
 	/**
 	 * creates a new counter and returns the ID
 	 *
-	 * @return the ID of the newly created counter
+	 * @return the success message
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.POST, produces = "text/plain")
-	public int createCounter() {
+	public String createCounter() {
 		return FibonacciDB.getInstance().createCounter();
 	}
 
@@ -76,6 +76,7 @@ public class FibonacciService {
 	public String removeCounter(@PathVariable("id") Integer id) {
 		return FibonacciDB.getInstance().removeCounter(id);
 	}
+
 
 	@Configuration
 	@EnableAuthorizationServer

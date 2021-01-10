@@ -38,32 +38,37 @@ public class FibonacciWebApplication {
 	@RequestMapping("/")
 	public String home(Model model) {
 		model.addAttribute("counter", new Counter());
+		getCountersList(model);
 		return "fibapp";
 	}
 
 	@GetMapping("/fib")
 	public String getCountersList(Model model) {
+		model.addAttribute("counter", new Counter());
 		String list = restTemplate.getForObject(baseUrl + "/", String.class);
 		model.addAttribute("counterlist", list);
 		return "fibapp";
 	}
 
-	@RequestMapping("/addnew")
+	@RequestMapping(path = "/addnew")
 	public String createCounter(Model model) {
-		restTemplate.postForObject(baseUrl + "/", null, int.class);
-		//getCountersList(model);
+		model.addAttribute("counter", new Counter());
+		restTemplate.postForObject(baseUrl + "/", null, String.class);
+		getCountersList(model);
 		return "fibapp";
 	}
 
-	@PostMapping("/nextfib")
+	@PostMapping(path = "/nextfib")
 	public String increaseCounter(@ModelAttribute("counter") Counter counter, Model model) {
-		restTemplate.postForObject(baseUrl + "/" + counter.getId(), null, int.class);
+		model.addAttribute("counter", counter);
+		restTemplate.postForObject(baseUrl + "/" + counter.getId(), null, String.class);
 		getCountersList(model);
 		return "fibapp";
 	}
 
 	@PostMapping("/delfib")
 	public String deleteCounter(@ModelAttribute("counter") Counter counter, Model model) {
+		model.addAttribute("counter", counter);
 		restTemplate.delete(baseUrl + "/" + counter.getId());
 		getCountersList(model);
 		return "fibapp";
@@ -79,7 +84,7 @@ public class FibonacciWebApplication {
 		ClientCredentialsResourceDetails resource = new ClientCredentialsResourceDetails();
 		resource.setAccessTokenUri(tokenUrl);
 		resource.setClientSecret("secret");
-		resource.setClientId("my-trusted-client");
+		resource.setClientId("my-client-with-secret");
 		return resource;
 	}
 

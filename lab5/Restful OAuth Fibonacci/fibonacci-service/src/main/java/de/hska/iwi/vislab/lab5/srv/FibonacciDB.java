@@ -31,10 +31,10 @@ public class FibonacciDB {
 
     }
 
-    public int createCounter() {
+    public String createCounter() {
         FibCounter newCounter = new FibCounter();
         counters.put(lastId++, newCounter);
-        return lastId - 1;
+        return lastId - 1 + "";
     }
 
     public int getCounterValue(Integer id) {

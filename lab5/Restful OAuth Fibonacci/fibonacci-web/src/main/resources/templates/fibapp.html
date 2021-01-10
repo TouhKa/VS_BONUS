@@ -7,10 +7,6 @@
 
     <h1>Fibonacci App</h1>
 
-    <form>
-        <input type="submit" value="refresh counters list" formaction="/fibonacci-web/fib" formmethod="get"/>
-    </form>
-
     <p th:text="${counterlist} != null ? ${counterlist} : 'No counters yet.'"></p>
 
     <form>
