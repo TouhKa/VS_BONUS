@@ -88,7 +88,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>tcc.TestServer</mainClass>
+						<mainClass>tcc.TestServer</mainClass>
 					<systemProperties>
 						<systemProperty>
 							<key>com.sun.xml.bind.v2.bytecode.ClassTailor.noOptimize</key>
